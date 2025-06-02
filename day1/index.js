@@ -1,9 +1,8 @@
-console.log("Hello, World!");
-let age =45;
-if(age>18){
-    console.log("you can drive");
-    
-}
-else{
-    console.log("you cannot drive");            
+console.log("i am a tutorial on loops")
+let a=1;
+console.log(a);
+
+for(let i=0; i<100; i++)
+{
+    console.log(a+i);
 }
