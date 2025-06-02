@@ -1,29 +1,21 @@
-//promises
-const getData = () => {
+//Error handeling in promises
+const riskyOperation = () => {
   return new Promise((resolve, reject) => {
+    const success = Math.random() > 0.5;
     setTimeout(() => {
-      resolve("Data received");
+      success ? resolve("Success") : reject("Failure");
     }, 1000);
   });
 };
 
-getData().then(data => {
-  console.log(data);
-});
-//promise chaining
-const fetchData = () => {
-  return new Promise(resolve => {
-    setTimeout(() => resolve("Step 1"), 1000);
+riskyOperation()
+  .then(console.log)
+  .catch(error => {
+    console.error("Caught error:", error);
   });
-};
-
-fetchData()
-  .then(result => {
-    console.log(result);
-    return "Step 2";
-  })
-  .then(step => {
-    console.log(step);
-    return "Step 3";
-  })
-  .then(console.log);
+Promise.all([
+  Promise.resolve("First"),
+  new Promise(res => setTimeout(() => res("Second"), 1000)),
+  Promise.resolve("Third")
+]).then(console.log);
+ 
