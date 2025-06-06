@@ -8,7 +8,7 @@ export default function Home() {
     if (name.trim() !== '') {
       setGreet(`Hello, ${name}! 👋`);
     } else {
-      setGreet('Please enter your name.');
+      setGreet('Please enter your name!');
     }
   };
 
