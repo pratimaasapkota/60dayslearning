@@ -6,11 +6,7 @@ import TodoItem from './components/TodoItem';
 function App() {
   const [todos, setTodos] = useState([]);
 
-  const addTodo = (text) => {
-    const newTodo = {
-      id: Date.now(),
-      text,
-      completed: false,
+ 
     };
     setTodos([newTodo, ...todos]);
   };
