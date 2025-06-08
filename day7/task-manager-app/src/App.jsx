@@ -1,32 +1,17 @@
-import './App.css'
-import { Suspense, lazy } from 'react'
-import reactLogo from './assets/react.svg'
-
-// Works also with SSR as expected
-const Card = lazy(() => import('./Card'))
+import { TaskProvider } from './context/TaskContext';
+import TaskForm from './components/TaskForm';
+import TaskList from './components/TaskList';
 
 function App() {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <TaskProvider>
+      <div className="max-w-md mx-auto mt-10 p-6 border rounded shadow">
+        <h1 className="text-2xl mb-4 text-center font-bold">📝 Task Manager</h1>
+        <TaskForm />
+        <TaskList />
       </div>
-      <h1>Vite + React</h1>
-
-      <Suspense fallback={<p>Loading card component...</p>}>
-        <Card />
-      </Suspense>
-
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </TaskProvider>
+  );
 }
 
-export default App
+export default App;
