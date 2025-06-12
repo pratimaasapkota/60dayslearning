@@ -1,0 +1,27 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #111;
+}
+
+.logo {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.links a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: #ccc;
+  transition: 0.3s;
+}
+
+.links a:hover {
+  color: white;
+}
+
+.active {
+  color: #4ade80; /* green highlight */
+}
