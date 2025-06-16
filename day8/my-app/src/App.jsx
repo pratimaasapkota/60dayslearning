@@ -17,7 +17,14 @@ function AppContent() {
     padding: '2rem',
   };
 
- 
+  return (
+    <div style={appStyle}>
+      <h1>React Hooks Example</h1>
+      <ThemeToggle />
+      <Counter />
+    </div>
+  );
+}
 
 function App() {
   return (
