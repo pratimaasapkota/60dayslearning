@@ -17,10 +17,8 @@ router.post('/', (req, res) => {
   res.status(201).json(newNote);
 });
 
-router.delete('/:id', (req, res) => {
-  const id = parseInt(req.params.id);
-  notes = notes.filter(note => note.id !== id);
-  res.status(204).send();
+
+
 });
 
 module.exports = router;
