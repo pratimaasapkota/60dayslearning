@@ -36,7 +36,11 @@ const RegistrationForm = () => {
     return Object.keys(tempErrors).length === 0
   }
 
- 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if (validate()) {
+      console.log('Form Submitted:', formData)
+      setSubmitted(true)
       // Clear form
       setFormData({
         name: '',
