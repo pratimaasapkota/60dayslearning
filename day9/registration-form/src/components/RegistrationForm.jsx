@@ -9,9 +9,9 @@ const RegistrationForm = () => {
 
   const [errors, setErrors] = useState({})
   const [submitted, setSubmitted] = useState(false)
-
+  
   const handleChange = (e) => {
-    const { name, value } = e.target
+          const { name, value } = e.target
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
@@ -20,12 +20,12 @@ const RegistrationForm = () => {
 
   const validate = () => {
     let tempErrors = {}
-
+ 
     if (!formData.name) tempErrors.name = 'Name is required'
     if (!formData.email) {
       tempErrors.email = 'Email is required'
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      tempErrors.email = 'Email is invalid'
+       tempErrors.email = 'Email is invalid'
     }
     if (!formData.password) tempErrors.password = 'Password is required'
     else if (formData.password.length < 6)
@@ -36,11 +36,7 @@ const RegistrationForm = () => {
     return Object.keys(tempErrors).length === 0
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    if (validate()) {
-      console.log('Form Submitted:', formData)
-      setSubmitted(true)
+ 
       // Clear form
       setFormData({
         name: '',
