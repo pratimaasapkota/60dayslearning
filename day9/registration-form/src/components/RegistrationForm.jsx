@@ -27,7 +27,11 @@ const RegistrationForm = () => {
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
        tempErrors.email = 'Email is invalid'
     }
-    
+    if (!formData.password) tempErrors.password = 'Password is required'
+    else if (formData.password.length < 6)
+      tempErrors.password = 'Password must be at least 6 characters'
+
+    setErrors(tempErrors)
 
     return Object.keys(tempErrors).length === 0
   }
